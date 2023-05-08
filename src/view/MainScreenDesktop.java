@@ -9,13 +9,16 @@ import java.util.Scanner;
 
 import business.control.UserManager;
 import business.model.User;
+import business.model.Cursos.ArquiteUrban;
 
 public class MainScreenDesktop {
 
     private static UserManager userManager;
     private static Scanner scanner = new Scanner(System.in);
+    private static ArquiteUrban arquiteUrban;
 
     public static void main(String[] args) throws InfraException {
+        InicializarCursos();
         userManager = new UserManager();
         showMenu();
     }
@@ -26,7 +29,8 @@ public class MainScreenDesktop {
         System.out.println("1-Cadastrar Usuario");
         System.out.println("2-Listar Usuarios");
         System.out.println("3-Excluir Usuario");
-        System.out.println("4-Sair");
+        System.out.println("4-Ver Cursos Disponiveis");
+        System.out.println("5-Sair");
 
         int option = readIntInput();
 
@@ -41,6 +45,9 @@ public class MainScreenDesktop {
                 removeUser();
                 break;
             case 4:
+                ListarCursos();
+                break;
+            case 5:
                 System.exit(0);
             default:
                 System.out.println("Opcao invalida!");
@@ -113,6 +120,15 @@ public class MainScreenDesktop {
         }
 
         showMenu();
+    }
+
+    private static void InicializarCursos() {
+        arquiteUrban = new ArquiteUrban("Aquitetura e Urbanismo", 4, "Ciências Sociais");
+        arquiteUrban.setGradeCurrular("Aqui a gente coloca toda a grade curricular");
+    }
+
+    private static void ListarCursos() {
+        System.out.println(arquiteUrban);
     }
 
     private static String readStringInput(String prompt) {
