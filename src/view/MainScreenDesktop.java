@@ -1,4 +1,5 @@
 package view;
+
 import infra.InfraException;
 import util.LoginInvalidException;
 import util.PasswordInvalidException;
@@ -37,6 +38,7 @@ public class MainScreenDesktop {
                 listUsers();
                 break;
             case 3:
+                removeUser();
                 break;
             case 4:
                 System.exit(0);
@@ -90,6 +92,22 @@ public class MainScreenDesktop {
                 usuarios = usuarios + "[ Login: " + user.getLogin() + " || Senha: " + user.getSenha() + " ]" + "\n";
             }
             System.out.println(usuarios);
+        } catch (InfraException e) {
+            System.out.println(e.getMessage());
+        }
+
+        showMenu();
+    }
+
+    private static void removeUser() {
+        String login = readStringInput("Digite o login do usuario que deseja excluir:");
+        try {
+            if (userManager.getAllClients().containsKey(login)) {
+                userManager.getAllClients().remove(login);
+                System.out.println("Usuario removido com sucesso!");
+            } else {
+                System.out.println("Usuario nao encontrado!");
+            }
         } catch (InfraException e) {
             System.out.println(e.getMessage());
         }
