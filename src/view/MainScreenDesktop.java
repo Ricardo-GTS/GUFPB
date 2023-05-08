@@ -1,5 +1,4 @@
 package view;
-
 import infra.InfraException;
 import util.LoginInvalidException;
 import util.PasswordInvalidException;
@@ -12,14 +11,15 @@ import business.model.User;
 
 public class MainScreenDesktop {
 
-    UserManager userManager;
+    private static UserManager userManager;
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InfraException {
+        userManager = new UserManager();
         showMenu();
     }
 
-    public static void showMenu() {
-        Scanner scanner = new Scanner(System.in);
+    private static void showMenu() {
         System.out.println("Bem vindo ao sistema GUFPB !");
         System.out.println("Escolha a opcao desejada:");
         System.out.println("1-Cadastrar Usuario");
@@ -27,80 +27,78 @@ public class MainScreenDesktop {
         System.out.println("3-Excluir Usuario");
         System.out.println("4-Sair");
 
-        String option = scanner.nextLine();
+        int option = readIntInput();
 
-        MainScreenDesktop main = new MainScreenDesktop();
-
-        main.readUserInput(option);
-    }
-
-    public void readUserInput(String option) {
-        try {
-            userManager = new UserManager();
-        } catch (InfraException e) {
-            System.out.println(e.getMessage());
-        }
-        int choice = Integer.parseInt(option);
-        boolean checkedLogin = false;
-        boolean checkedPassword = false;
-        switch (choice) {
-
+        switch (option) {
             case 1:
-
-                while (true) {
-                    String name = "";
-                    String pass = "";
-
-                    if (!checkedLogin) {
-                        System.out.println("Nome do usuario:");
-                        name = new Scanner(System.in).nextLine();
-
-                    }
-                    if (!checkedPassword) {
-                        System.out.println("Senha do usuario:");
-                        pass = new Scanner(System.in).nextLine();
-
-                    }
-
-                    try {
-                        String[] args = {name, pass};
-                        this.userManager.addUser(args);
-                        System.out.println("Usuario adicionado com sucesso!");
-                        break;
-                    } catch (LoginInvalidException e) {
-                        System.out.println(e.getMessage());
-                        checkedLogin = false;
-                        checkedPassword = true;
-                    } catch (PasswordInvalidException e) {
-                        System.out.println(e.getMessage());
-                        checkedLogin = true;
-                        checkedPassword = false;
-                    }
-
-                }
-                showMenu();
+                registerUser();
                 break;
-
             case 2:
-                String usuarios = "";
-                Iterator<User> users;
-                try {
-                    users = this.userManager.getAllClients().values().iterator();
-                    while (users.hasNext()) {
-                        User user = users.next();
-                        usuarios = usuarios + "[ Login: " + user.getLogin() + " || Senha: " + user.getSenha() + " ]" + "\n";
-                    }
-                    System.out.println(usuarios);
-                } catch (InfraException e) {
-                    System.out.println(e.getMessage());
-                }
-
-
-                showMenu();
+                listUsers();
                 break;
             case 3:
                 break;
-
+            case 4:
+                System.exit(0);
+            default:
+                System.out.println("Opcao invalida!");
+                showMenu();
+                break;
         }
+    }
+
+    private static int readIntInput() {
+        while (true) {
+            System.out.print("Digite sua opcao: ");
+            try {
+                return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Opcao invalida! Digite novamente.");
+            }
+        }
+    }
+
+    private static void registerUser() {
+        String name = readStringInput("Nome do usuario:");
+        String pass = readStringInput("Senha do usuario:");
+
+        while (true) {
+            try {
+                String[] args = {name, pass};
+                userManager.addUser(args);
+                System.out.println("Usuario adicionado com sucesso!");
+                break;
+            } catch (LoginInvalidException e) {
+                System.out.println(e.getMessage());
+                name = readStringInput("Nome do usuario:");
+            } catch (PasswordInvalidException e) {
+                System.out.println(e.getMessage());
+                pass = readStringInput("Senha do usuario:");
+            } 
+        }
+
+        showMenu();
+    }
+
+    private static void listUsers() {
+        String usuarios = "";
+        Iterator<User> users;
+        try {
+            users = userManager.getAllClients().values().iterator();
+            while (users.hasNext()) {
+                User user = users.next();
+                usuarios = usuarios + "[ Login: " + user.getLogin() + " || Senha: " + user.getSenha() + " ]" + "\n";
+            }
+            System.out.println(usuarios);
+        } catch (InfraException e) {
+            System.out.println(e.getMessage());
+        }
+
+        showMenu();
+    }
+
+    private static String readStringInput(String prompt) {
+        System.out.print(prompt + " ");
+        return scanner.nextLine();
     }
 }
