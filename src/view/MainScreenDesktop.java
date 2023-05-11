@@ -7,19 +7,19 @@ import util.PasswordInvalidException;
 import java.util.Iterator;
 import java.util.Scanner;
 
-import business.control.UserManager;
+import business.control.UserManagerFacade;
 import business.model.User;
 import business.model.Cursos.ArquiteUrban;
 
 public class MainScreenDesktop {
 
-    private static UserManager userManager;
+    private static UserManagerFacade userManager;
     private static Scanner scanner = new Scanner(System.in);
     private static ArquiteUrban arquiteUrban;
 
     public static void main(String[] args) throws InfraException {
         InicializarCursos();
-        userManager = new UserManager();
+        userManager = UserManagerFacade.getInstance();
         showMenu();
     }
 
@@ -110,7 +110,7 @@ public class MainScreenDesktop {
         String login = readStringInput("Digite o login do usuario que deseja excluir:");
         try {
             if (userManager.getAllClients().containsKey(login)) {
-                userManager.getAllClients().remove(login);
+                userManager.removeUser(login);
                 System.out.println("Usuario removido com sucesso!");
             } else {
                 System.out.println("Usuario nao encontrado!");
@@ -121,6 +121,7 @@ public class MainScreenDesktop {
 
         showMenu();
     }
+
 
     private static void InicializarCursos() {
         arquiteUrban = new ArquiteUrban("Aquitetura e Urbanismo", 4, "Ciências Sociais");
