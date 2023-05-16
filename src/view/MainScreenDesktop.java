@@ -4,7 +4,9 @@ import infra.InfraException;
 import util.LoginInvalidException;
 import util.PasswordInvalidException;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 import business.control.UserManagerFacade;
@@ -73,7 +75,7 @@ public class MainScreenDesktop {
 
         while (true) {
             try {
-                String[] args = {name, pass};
+                String[] args = { name, pass };
                 userManager.addUser(args);
                 System.out.println("Usuario adicionado com sucesso!");
                 break;
@@ -83,7 +85,7 @@ public class MainScreenDesktop {
             } catch (PasswordInvalidException e) {
                 System.out.println(e.getMessage());
                 pass = readStringInput("Senha do usuario:");
-            } 
+            }
         }
 
         showMenu();
@@ -122,14 +124,17 @@ public class MainScreenDesktop {
         showMenu();
     }
 
-
     private static void InicializarCursos() {
         arquiteUrban = new ArquiteUrban("Aquitetura e Urbanismo", 4, "Ciências Sociais");
         arquiteUrban.setGradeCurrular("Aqui a gente coloca toda a grade curricular");
     }
 
     private static void ListarCursos() {
-        System.out.println(arquiteUrban);
+
+        List<String> CursosListados = new ArrayList<>();
+        CursosListados.add("Arquitetura e Urbanismo");
+
+        System.out.println(CursosListados);
     }
 
     private static String readStringInput(String prompt) {
