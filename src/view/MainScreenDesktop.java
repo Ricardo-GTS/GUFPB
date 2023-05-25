@@ -8,8 +8,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 import business.control.UserManagerFacade;
+import business.model.Curso;
 import business.model.User;
 import business.model.Cursos.ArquiteUrban;
 import business.model.Cursos.Data;
@@ -19,6 +22,8 @@ public class MainScreenDesktop {
     private static UserManagerFacade userManager;
     private static Scanner scanner = new Scanner(System.in);
     private static ArquiteUrban arquiteUrban;
+    private static List<Curso> CursosListados = new ArrayList<>();
+    private static Map<String, Curso> CursosListadosMap = new HashMap<>();
 
     public static void main(String[] args) throws InfraException {
         InicializarCursos();
@@ -152,15 +157,24 @@ public class MainScreenDesktop {
 
     private static void InicializarCursos() {
         arquiteUrban = new ArquiteUrban("Aquitetura e Urbanismo", 4, "Ciências Sociais");
-        arquiteUrban.setGradeCurrular("Aqui a gente coloca toda a grade curricular");
+        arquiteUrban.setGradeCurricular("Aqui a gente coloca toda a grade curricular");
+        CursosListadosMap.put("ArquiteUrban", arquiteUrban);
+
+        // Adicionar outros cursos aqui
+
     }
 
     private static void ListarCursos() {
 
-        List<String> CursosListados = new ArrayList<>();
-        CursosListados.add("Arquitetura e Urbanismo");
-
-        System.out.println(CursosListados);
+        System.out.println("Cursos Listados:");
+        for (Map.Entry<String, Curso> entry : CursosListadosMap.entrySet()) {
+            String nome = entry.getKey();
+            Curso curso = entry.getValue();
+            System.out.println("Curso: " + nome);
+            curso.imprimirInformacoesCurso();
+        }
+        
+        showMenu();
     }
 
     private static String readStringInput(String prompt) {

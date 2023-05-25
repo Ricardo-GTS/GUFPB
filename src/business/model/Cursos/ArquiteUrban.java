@@ -4,59 +4,25 @@ import business.model.Curso;
 
 public class ArquiteUrban extends Curso {
 
+
     public ArquiteUrban(String nome, int anosDuração, String area) {
         super(nome, anosDuração, area);
-        // TODO Auto-generated constructor stub
     }
-
-    int anosDuração = 4;
-
+    
     @Override
-    public int getAnosDuração() {
-        // TODO Auto-generated method stub
-        return anosDuração;
+    public void setGradeCurricular(String grade) {
+        gradeCurricular = new StringBuilder();
+        gradeCurricular.append(grade);
     }
 
     @Override
-    public String getArea() {
-        // TODO Auto-generated method stub
-        return super.getArea();
+    public void imprimirGradeCurricular() {     //Método Template
+        // Implementação específica para o curso ArquiteUrban
+        System.out.println("Grade Curricular do curso Aquitetura e Urbanismo:");
+        System.out.println(gradeCurricular);
     }
 
-    @Override
-    public StringBuilder getGradeCurrular() {
-        // TODO Auto-generated method stub
-        return super.getGradeCurrular();
-    }
 
-    @Override
-    public String getNome() {
-        // TODO Auto-generated method stub
-        return super.getNome();
-    }
 
-    @Override
-    public void setAnosDuração(int anosDuração) {
-        // TODO Auto-generated method stub
-        super.setAnosDuração(anosDuração);
-    }
-
-    @Override
-    public void setArea(String area) {
-        // TODO Auto-generated method stub
-        super.setArea(area);
-    }
-
-    @Override
-    public void setGradeCurrular(String grade) {
-        // TODO Auto-generated method stub
-        super.setGradeCurrular(grade);
-    }
-
-    @Override
-    public void setNome(String nome) {
-        // TODO Auto-generated method stub
-        super.setNome(nome);
-    }
 
 }

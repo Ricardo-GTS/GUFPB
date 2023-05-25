@@ -1,11 +1,9 @@
 package business.model;
 
-//Classe pai para criar os metodos e fazer as classes filhas herdarem.
-
 public abstract class Curso {
     protected String nome;
     protected int anosDuração;
-    protected StringBuilder gradeCurrular;
+    protected StringBuilder gradeCurricular;
     protected String area;
 
     // Construtor
@@ -15,45 +13,46 @@ public abstract class Curso {
         this.area = area;
     }
 
-    // Gets e Sets
-    public String getNome() {
-        return nome;
+    // Método Template
+    public void imprimirInformacoesCurso() {
+        System.out.println("Informações do Curso:");
+        System.out.println("Nome: " + getNome());
+        System.out.println("Duração: " + getDuracaoCurso() + " anos");
+        System.out.println("Área: " + getArea());
+        imprimirGradeCurricular();
+        System.out.println("---------------------");
     }
+
+    // Métodos abstratos para serem implementados pelas subclasses
+    protected abstract void imprimirGradeCurricular();
+    protected abstract void setGradeCurricular(String grade);
+
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public int getAnosDuração() {
-        return anosDuração;
-    }
-
-    public void setAnosDuração(int anosDuração) {
+    public void setDuracaoCurso(int anosDuração) {
         this.anosDuração = anosDuração;
-    }
-
-    public StringBuilder getGradeCurrular() {
-        return gradeCurrular;
-    }
-
-    public void setGradeCurrular(String grade) {
-        gradeCurrular = new StringBuilder();
-        gradeCurrular.append(grade);
-    }
-
-    public String getArea() {
-        return area;
     }
 
     public void setArea(String area) {
         this.area = area;
     }
 
-    public String toString() {
-        return "Curso: " + nome + "\n" +
-                "Duração: " + anosDuração + " anos" + "\n" +
-                "Área: " + area + "\n" +
-                "Grade curricular: " + gradeCurrular;
+    public String getNome() {
+        return this.nome;
     }
 
+    public int getDuracaoCurso() {
+        return this.anosDuração;
+    }
+
+    public String getArea() {
+        return this.area;
+    }
+
+    public StringBuilder getGradeCurricular() {
+        return this.gradeCurricular;
+    }
 }
