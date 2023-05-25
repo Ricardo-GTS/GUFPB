@@ -8,7 +8,7 @@ import java.util.Map;
 import business.model.User;
 import business.model.Cursos.Data;
 
-public class UserManagerFacade {
+public class UserManagerFacade {			// Padrão Facade
 
 	private static UserManagerFacade instance;
 	private UserManager userManager;
@@ -17,7 +17,7 @@ public class UserManagerFacade {
 		userManager = new UserManager();
 	}
 
-	public static synchronized UserManagerFacade getInstance() throws InfraException {
+	public static synchronized UserManagerFacade getInstance() throws InfraException {		// Padrão Singleton
 		if (instance == null) {
 			instance = new UserManagerFacade();
 		}

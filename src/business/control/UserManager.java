@@ -23,7 +23,12 @@ public class UserManager {
 			throws LoginInvalidException, PasswordInvalidException {
 		UserValidador.validateName(args[0]);
 		UserValidador.validatePassword(args[1]);
-		users.put(args[0], new User(args[0], args[1], data2));
+		users.put(args[0], createUser(args[0], args[1], data2));
+	}
+
+	private User createUser(String username, String password, Data data) {		// Padrão Factory
+		// Lógica de criação de um objeto User
+		return new User(username, password, data);
 	}
 
 	public void removeUser(String login) throws InfraException {
@@ -42,5 +47,3 @@ public class UserManager {
 	}
 
 }
-
-
