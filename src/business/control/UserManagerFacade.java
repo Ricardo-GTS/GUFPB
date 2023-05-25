@@ -6,6 +6,7 @@ import util.PasswordInvalidException;
 import java.util.Map;
 
 import business.model.User;
+import business.model.Cursos.Data;
 
 public class UserManagerFacade {
 
@@ -23,8 +24,8 @@ public class UserManagerFacade {
 		return instance;
 	}
 
-	public void addUser(String[] args) throws LoginInvalidException, PasswordInvalidException {
-		userManager.addUser(args);
+	public void addUser(String[] args, Data data) throws LoginInvalidException, PasswordInvalidException {
+		userManager.addUser(args, data);
 	}
 
 	public void removeUser(String login) throws InfraException {

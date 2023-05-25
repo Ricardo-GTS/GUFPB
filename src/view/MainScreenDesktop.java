@@ -12,6 +12,7 @@ import java.util.Scanner;
 import business.control.UserManagerFacade;
 import business.model.User;
 import business.model.Cursos.ArquiteUrban;
+import business.model.Cursos.Data;
 
 public class MainScreenDesktop {
 
@@ -70,13 +71,34 @@ public class MainScreenDesktop {
     }
 
     private static void registerUser() {
-        String name = readStringInput("Nome do usuario:");
-        String pass = readStringInput("Senha do usuario:");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nome do usuario: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Senha do usuario:");
+        String pass = scanner.nextLine();
+
+        System.out.println("Data de nascimento");
+        System.out.print("Dia: ");
+        int dia = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Mes: ");
+        int mes = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Ano: ");
+        int ano = scanner.nextInt();
+        scanner.nextLine();
+
+        Data data2 = new Data(dia, mes, ano);
+        System.out.println(data2);
 
         while (true) {
             try {
-                String[] args = { name, pass };
-                userManager.addUser(args);
+                String[] args = { name, pass, data2.toString() };
+                userManager.addUser(args, data2);
                 System.out.println("Usuario adicionado com sucesso!");
                 break;
             } catch (LoginInvalidException e) {
@@ -89,16 +111,20 @@ public class MainScreenDesktop {
         }
 
         showMenu();
+        scanner.close();
+
     }
 
     private static void listUsers() {
+
         String usuarios = "";
         Iterator<User> users;
         try {
             users = userManager.getAllClients().values().iterator();
             while (users.hasNext()) {
                 User user = users.next();
-                usuarios = usuarios + "[ Login: " + user.getLogin() + " || Senha: " + user.getSenha() + " ]" + "\n";
+                usuarios = usuarios + "[ Login: " + user.getLogin() + " || Senha: " + user.getSenha()
+                        + " ||" + " Data de Nascimento: " + user.getData_nascimento() + " ]" + "\n";
             }
             System.out.println(usuarios);
         } catch (InfraException e) {
