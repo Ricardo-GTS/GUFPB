@@ -7,28 +7,30 @@ import java.io.InputStreamReader;
 
 import business.model.Curso;
 
-public class ArquiteUrban extends Curso {
+public class Computacao extends Curso {
 
-    public ArquiteUrban(String nome, int anosDuração, String area) {
+    public Computacao(String nome, int anosDuração, String area) {
         super(nome, anosDuração, area);
         carregarGradeCurricular();
+        // TODO Auto-generated constructor stub
     }
 
     @Override
-    public void setGradeCurricular(String grade) {
+    protected void setGradeCurricular(String grade) {
+        // TODO Auto-generated method stub
         gradeCurricular = new StringBuilder();
         gradeCurricular.append(grade);
     }
 
     @Override
-    public void imprimirGradeCurricular() {
-        System.out.println("Grade Curricular do curso Arquitetura e Urbanismo:");
+    protected void imprimirGradeCurricular() {
+        // TODO Auto-generated method stub
+        System.out.println("Grade Curricular do curso de Ciência da Computação:");
         System.out.println(gradeCurricular);
     }
 
     private void carregarGradeCurricular() {
-        try (InputStream inputStream = getClass().getClassLoader()
-                .getResourceAsStream("resources/GradeArquiteUrban.txt");
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("resources/GradeCC.txt");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             StringBuilder grade = new StringBuilder();
@@ -40,4 +42,5 @@ public class ArquiteUrban extends Curso {
             System.out.println("Erro ao carregar a grade curricular: " + e.getMessage());
         }
     }
+
 }

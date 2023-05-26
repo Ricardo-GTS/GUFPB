@@ -1,0 +1,172 @@
+1º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1103118	CÁLCULO VETORIAL E GEOMETRIA ANALÍTICA - 60h			60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1103177	CÁLCULO DIFERENCIAL E INTEGRAL I - 60h			60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1107136	INTRODUÇÃO A PROGRAMAÇÃO - 60h			60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1107259	MATEMÁTICA DISCRETA - 60h			60h aula
+0h lab.	DISCIPLINA	Obrigatória
+DINF00045	METODOLOGIA DO TRABALHO CIENTÍFICO PARA CIÊNCIA DA COMPUTAÇÃO - 30h			30h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+DINF00046	INTRODUÇÃO À CIÊNCIA DA COMPUTAÇÃO - 60h			60h aula
+0h lab.	DISCIPLINA	Obrigatória
+DINF00056	PESQUISA APLICADA À COMPUTAÇÃO - 30h			30h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+CH Total: 360h.   
+----------------------------------------------------------------------- 
+2º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1103178	CÁLCULO DIFERENCIAL E INTEGRAL II - 60h	( 1103177 ) E ( 1103118 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1103179	INTRODUÇÃO À ÁLGEBRA LINEAR - 60h	( 1103118 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+GDCOC0079	LÓGICA APLICADA À COMPUTAÇÃO - 60h	( 1107259 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+GDCOC0101	PROGRAMAÇÃO ORIENTADA A OBJETOS - 60h	( 1107136 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+GDSCO0036	ARQUITETURA DE COMPUTADORES I - 60h	( DINF00046 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+CH Total: 300h. 
+-----------------------------------------------------------------------   
+3º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1103180	SÉRIES E EQUAÇÕES DIFERENCIAIS ORDINÁRIAS - 60h	( 1103178 ) E ( 1103179 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1103232	CÁLCULO DIFERENCIAL E INTEGRAL III - 60h	( 1103178 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+5102007	PESQUISA OPERACIONAL - 60h	( GDCOC0101 ) E ( 1103179 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+5102009	ALGEBRA LINEAR COMPUTACIONAL - 60h	( 1103179 ) E ( GDCOC0101 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+GDSCO0054	INTRODUÇÃO À TEORIA DA INFORMAÇÃO - 60h	( 1103179 )		50h aula
+10h lab.	DISCIPLINA	Optativa
+GDSCO0081	SISTEMAS EMBARCADOS I - 60h	( GDSCO0036 )		20h aula
+40h lab.	DISCIPLINA	Optativa
+1108100	CÁLCULO DAS PROBABILIDADES E ESTATÍSTICA I - 60h	( 1103178 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+DCOC00062	LINGUAGENS FORMAIS E COMPUTABILIDADE - 60h	( GDCOC0079 )		50h aula
+10h lab.	DISCIPLINA	Obrigatória
+DINF00047	ESTRUTURAS DE DADOS E ALGORITMOS I - 60h	( GDCOC0101 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+DINF00050	PROGRAMAÇÃO FUNCIONAL - 60h	( 1107136 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+GDCOC0072	CALCULO NUMERICO - 60h	( GDCOC0101 ) E ( 1103178 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+GDSCO0037	ARQUITETURA DE COMPUTADORES II - 60h	( GDSCO0036 )		50h aula
+10h lab.	DISCIPLINA	Obrigatória
+CH Total: 720h.   
+----------------------------------------------------------------------- 
+4º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+GDCOC0091	TEORIA DOS GRAFOS APLICADA - 60h	( DINF00047 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+GDCOC0096	VISUALIZAÇÃO DE DADOS - 60h	( DINF00047 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+GDCOC0114	SÉRIES TEMPORAIS - 60h	( 1108100 )		50h aula
+10h lab.	DISCIPLINA	Optativa
+GDSCO0051	INTRODUÇÃO À COMPUTAÇÃO GRÁFICA - 60h	( DINF00047 ) E ( 1103179 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+1107128	ENGENHARIA DE SOFTWARE - 60h	( GDCOC0101 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1107191	INTRODUCAO A INTELIGENCIA ARTIFICIAL - 60h	( GDCOC0079 ) E ( DINF00047 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+DINF00048	ESTRUTURAS DE DADOS E ALGORITMOS II - 60h	( DINF00047 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+GDSCO0055	INTRODUÇÃO AO PROCESSAMENTO DIGITAL DE IMAGENS - 60h	( 1108100 ) E ( DINF00047 )		50h aula
+10h lab.	DISCIPLINA	Obrigatória
+GDSCO0062	REDES DE COMPUTADORES I - 60h	( GDCOC0101 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+GDSCO0068	SISTEMAS OPERACIONAIS I - 60h	( GDCOC0101 ) E ( GDSCO0036 )		50h aula
+10h lab.	DISCIPLINA	Obrigatória
+CH Total: 600h.   
+----------------------------------------------------------------------- 
+5º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+5101001	AVALIAÇÃO DE DESEMPENHO DE SISTEMAS OPERACIONAIS - 60h	( GDSCO0062 )		50h aula
+10h lab.	DISCIPLINA	Optativa
+DINF00064	REUSO DE SOFTWARE - 60h	( 1107128 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+DINF00067	SISTEMAS MULTIAGENTES - 60h	( 1107191 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+DINF00068	INTELIGÊNCIA ARTIFICIAL APLICADA À SAÚDE - 60h	( 1107191 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+DSCO00032	ADMINISTRAÇÃO DE SISTEMAS - 60h	( GDSCO0062 )		30h aula
+30h lab.	DISCIPLINA	Optativa
+GDSCO0032	REDES SEM FIO - 60h	( GDSCO0062 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+1107180	BANCO DE DADOS I - 60h	( DINF00047 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+1107184	ESPECIFICACAO DE REQUISITOS DE SOFTWARE - 60h 	( 1107128 )		30h aula
+0h lab.
+30h extensão	DISCIPLINA	Obrigatória
+1107205	PARADIGMAS DE LINGUAGENS DE PROGRAMAÇÃO - 60h	( DINF00050 ) E ( DCOC00062 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1107209	SISTEMAS BASEADOS EM CONHECIMENTO - 60h	( 1107191 )		50h aula
+10h lab.	DISCIPLINA	Obrigatória
+DINF00049	PROGRAMAÇÃO CONCORRENTE E DISTRIBUÍDA - 60h	( GDSCO0062 ) E ( GDSCO0068 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+GDCOC0076	ANÁLISE E PROJETO DE ALGORITMOS - 60h	( DINF00047 )		50h aula
+10h lab.	DISCIPLINA	Obrigatória
+CH Total: 720h.    
+-----------------------------------------------------------------------
+6º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+DINF00062	BANCOS DE DADOS AVANÇADOS - 60h	( 1107180 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+DINF00063	SISTEMAS DE GERENCIAMENTO DE BANCOS DE DADOS - 60h	( 1107180 ) E ( DINF00048 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+DINF00065	DESENVOLVIMENTO DE SISTEMAS WEB - 60h	( GDSCO0062 ) E ( 1107180 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+DINF00066	IMPLEMENTAÇÃO DE SISTEMAS PARA DISPOSITIVOS MÓVEIS - 60h	( GDSCO0062 ) E ( 1107180 )		40h aula
+20h lab.	DISCIPLINA	Optativa
+GDCOC0098	BIG DATA - 60h	( 1107180 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1107202	METODOS DE PROJETO DE SOFTWARE - 60h	( 1107128 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+DINF00051	PARADIGMAS DE APRENDIZAGEM DE MÁQUINA - 60h	( GDCOC0072 ) E ( 1107191 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+DSCO00021	SEGURANÇA COMPUTACIONAL - 60h	( GDSCO0062 )		45h aula
+15h lab.	DISCIPLINA	Obrigatória
+DSCO00022	SISTEMAS DISTRIBUÍDOS - 60h	( DINF00049 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+DSCO00023	INOVAÇÃO DE BASE CIENTÍFICA-TECNOLÓGICA E EMPREENDEDORISMO - 60h 			0h aula
+0h lab.
+60h extensão	DISCIPLINA	Complementar Obrigatória
+GDSCO0043	CONSTRUÇÃO DE COMPILADORES I - 60h	( DINF00047 ) E ( DCOC00062 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+CH Total: 660h.    
+-----------------------------------------------------------------------
+7º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1107203	MÉTODOS FORMAIS PARA DESENVOLVIMENTO DE SOFTWARE - 60h	( 1107202 ) E ( GDCOC0079 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+GDCOC0094	APRENDIZADO PROFUNDO - 60h	( DINF00051 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+DINF00052	ENGENHARIA DE SISTEMAS DISTRIBUÍDOS - 60h 	( DSCO00022 ) E ( 1107202 )		30h aula
+0h lab.
+30h extensão	DISCIPLINA	Obrigatória
+DINF00053	GERENCIAMENTO DE PROJETO DE SOFTWARE - 60h 	( 1107128 )		30h aula
+0h lab.
+30h extensão	DISCIPLINA	Obrigatória
+DINF00054	TESTE DE SOFTWARE - 60h	( 1107128 )		40h aula
+20h lab.	DISCIPLINA	Obrigatória
+DINF00055	TRABALHO DE CONCLUSÃO DE CURSO PARA CIÊNCIA DA COMPUTAÇÃO - 60h			60h aula
+0h lab.	TRABALHO DE CONCLUSÃO DE CURSO	Complementar Obrigatória
+DSCO00024	INTERAÇÃO HUMANO-COMPUTADOR - 60h	( 1107128 )		20h aula
+40h lab.	DISCIPLINA	Obrigatória
+GDADM0110	SISTEMAS DE INFORMAÇÃO NAS ORGANIZAÇÕES - 60h			60h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+CH Total: 480h.    
+-----------------------------------------------------------------------
+8º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+DSCO00025	DESIGN DE INTERAÇÃO - 60h			30h aula
+30h lab.	DISCIPLINA	Optativa
+GDINF0106	COMPUTADORES E SOCIEDADE - 60h			60h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+GDINF0132	ESTÁGIO SUPERVISIONADO - CIÊNCIA DA COMPUTAÇÃO - 300h	( 1107128 )		0h aula
+300h lab.	ESTÁGIO	Obrigatória
+CH Total: 420h.    
+-----------------------------------------------------------------------

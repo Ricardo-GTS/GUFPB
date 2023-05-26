@@ -1,11 +1,11 @@
 package business.model.Cursos;
 
-import business.model.Curso;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+import business.model.Curso;
 
 public class fisica extends Curso {
 

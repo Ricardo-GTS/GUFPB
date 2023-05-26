@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import business.model.Curso;
 import business.model.Cursos.ArquiteUrban;
+import business.model.Cursos.Computacao;
 import business.model.Cursos.fisica;
 
 public class CursoManager {
@@ -27,6 +28,8 @@ public class CursoManager {
         fisica fisica = new fisica("Física (licenciatura)", 4, "Exatas");
         cursosListadosMap.put("Física", fisica);
 
+        Computacao computacao = new Computacao("Ciência da Computação", 4, "Tecnologia da Informação");
+        cursosListadosMap.put("Ciência da Computação", computacao);
         // Adicionar outros cursos aqui
 
     }
@@ -36,6 +39,7 @@ public class CursoManager {
 
         numeroParaNomeCursoMap.put(1, "ArquiteUrban");
         numeroParaNomeCursoMap.put(2, "Física");
+        numeroParaNomeCursoMap.put(3, "Ciência da Computação");
 
         // Adicionar outros cursos aqui
 

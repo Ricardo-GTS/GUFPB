@@ -22,15 +22,15 @@ public abstract class Curso {
         System.out.println("---------------------");
     }
 
-      // Método Template
+    // Método Template
     public void exibirGradeCurricular() {
         imprimirGradeCurricular();
     }
 
     // Métodos abstratos para serem implementados pelas subclasses
     protected abstract void imprimirGradeCurricular();
-    protected abstract void setGradeCurricular(String grade);
 
+    protected abstract void setGradeCurricular(String grade);
 
     public void setNome(String nome) {
         this.nome = nome;

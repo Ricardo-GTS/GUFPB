@@ -10,16 +10,14 @@ import business.control.CursoManagerFacade;
 import business.control.LoginManager;
 import business.control.QuestionarioManagerFacade;
 import business.control.UserManagerFacade;
-
-import business.model.User;
-
 import business.model.Curso;
+import business.model.User;
 import business.model.Questionario.Pergunta;
 
 public class MainScreenDesktop {
 
     private static UserManagerFacade userManager;
-    private static CursoManagerFacade CursoManager= CursoManagerFacade.getInstance();
+    private static CursoManagerFacade CursoManager = CursoManagerFacade.getInstance();
     private static LoginManager loginManager;
     private static Scanner scanner = new Scanner(System.in);
     private static User loggedInUser;
@@ -32,7 +30,7 @@ public class MainScreenDesktop {
     }
 
     private static void showMenu() throws InfraException {
-    
+
         if (!loginManager.isLoggedIn()) {
             System.out.println("\nEscolha a opção desejada:");
             System.out.println("1-Login");
@@ -41,9 +39,9 @@ public class MainScreenDesktop {
             System.out.println("4-Excluir Usuário");
             System.out.println("5-Ver Cursos Disponíveis");
             System.out.println("6-Sair\n");
-    
+
             int option = readIntInput();
-    
+
             switch (option) {
                 case 1:
                     loggedInUser = loginManager.performLogin();
@@ -92,7 +90,7 @@ public class MainScreenDesktop {
             showLoggedInMenu();
         }
     }
-    
+
     private static void showLoggedInMenu() throws InfraException {
         System.out.println("\nEscolha a opção desejada:");
         System.out.println("1-Ver Cursos Disponíveis");
@@ -101,9 +99,9 @@ public class MainScreenDesktop {
         System.out.println("4-Listar Usuários");
         System.out.println("5-Excluir Usuário");
         System.out.println("6-Logout\n");
-    
+
         int option = readIntInput();
-    
+
         switch (option) {
             case 1:
                 CursoManager.listarCursos();
@@ -137,7 +135,6 @@ public class MainScreenDesktop {
                 break;
         }
     }
-    
 
     private static int readIntInput() {
         while (true) {
