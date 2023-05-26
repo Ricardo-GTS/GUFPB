@@ -140,6 +140,15 @@ public class UserManager {
         }
     }
 
+    public User getUser(String login) throws InfraException {
+        for (User user : users) {
+            if (user.getLogin().equals(login)) {
+                return user;
+            }
+        }
+        throw new InfraException("Usuário não encontrado.");
+    }
+
     private static class ComparadorData implements Comparator<User> {
         @Override
         public int compare(User user1, User user2) {

@@ -36,6 +36,10 @@ public class UserManagerFacade {			// Padrão Facade
 		userManager.listUsers();
 	}
 
+	User getUser(String login) throws InfraException {
+		return userManager.getUser(login);
+	}
+
 	public Set<User> getAllClients() throws InfraException {
 		return userManager.getAllClients();
 	}
