@@ -33,13 +33,13 @@ public class MainScreenDesktop {
     private static void showMenu() throws InfraException {
     
         if (!loginManager.isLoggedIn()) {
-            System.out.println("Escolha a opção desejada:");
+            System.out.println("\nEscolha a opção desejada:");
             System.out.println("1-Login");
             System.out.println("2-Cadastrar Usuário");
             System.out.println("3-Listar Usuários");
             System.out.println("4-Excluir Usuário");
             System.out.println("5-Ver Cursos Disponíveis");
-            System.out.println("6-Sair");
+            System.out.println("6-Sair\n");
     
             int option = readIntInput();
     
@@ -93,13 +93,13 @@ public class MainScreenDesktop {
     }
     
     private static void showLoggedInMenu() throws InfraException {
-        System.out.println("Escolha a opção desejada:");
+        System.out.println("\nEscolha a opção desejada:");
         System.out.println("1-Ver Cursos Disponíveis");
         System.out.println("2-Responder Questionário");
         System.out.println("3-Ver Curso Recomendado");
         System.out.println("4-Listar Usuários");
         System.out.println("5-Excluir Usuário");
-        System.out.println("6-Logout");
+        System.out.println("6-Logout\n");
     
         int option = readIntInput();
     

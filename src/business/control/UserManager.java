@@ -51,7 +51,7 @@ public class UserManager {
             try {
                 String[] args = { name, pass, data2.toString() };
                 addUser(args, data2);
-                System.out.println("Usuario adicionado com sucesso!");
+                System.out.println("\nUsuario adicionado com sucesso!");
                 break;
             } catch (LoginInvalidException e) {
                 System.out.println(e.getMessage());
@@ -85,7 +85,7 @@ public class UserManager {
     public void listUsers() throws InfraException {
         try {
             Set<User> users = getAllClients();
-            System.out.println("Usuários cadastrados:");
+            System.out.println("\nUsuários cadastrados:");
             for (User user : users) {
                 System.out.println("[ Login: " + user.getLogin() + " || Senha: " + user.getSenha()
                         + " || Data de Nascimento: " + user.getData_nascimento() + " ]");
@@ -100,7 +100,7 @@ public class UserManager {
         String login = scanner.nextLine();
         try {
             DeleteUser(login);
-            System.out.println("Usuário removido com sucesso!");
+            System.out.println("\nUsuário removido com sucesso!");
         } catch (InfraException e) {
             System.out.println(e.getMessage());
         }
@@ -115,7 +115,7 @@ public class UserManager {
             }
         }
         if (userToRemove == null) {
-            throw new InfraException("Usuário não encontrado.");
+            throw new InfraException("\nUsuário não encontrado.");
         }
         users.remove(userToRemove);
     }
@@ -134,7 +134,7 @@ public class UserManager {
 
     public Set<User> getAllClients() throws InfraException {
         if (users.isEmpty()) {
-            throw new InfraException("Não há usuários cadastrados.");
+            throw new InfraException("\nNão há usuários cadastrados.");
         } else {
             return users;
         }
@@ -146,7 +146,7 @@ public class UserManager {
                 return user;
             }
         }
-        throw new InfraException("Usuário não encontrado.");
+        throw new InfraException("\nUsuário não encontrado.");
     }
 
     private static class ComparadorData implements Comparator<User> {

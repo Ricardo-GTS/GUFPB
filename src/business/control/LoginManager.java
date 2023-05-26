@@ -32,11 +32,11 @@ public class LoginManager {
         try {
             User user = userManager.getUser(username);
             if (user != null && validateCredentials(username, password, user)) {
-                System.out.println("Login bem-sucedido. Bem-vindo, " + user.getLogin() + "!");
+                System.out.println("\nLogin bem-sucedido. Bem-vindo, " + user.getLogin() + "!");
                 loggedIn = true;
                 return user;
             } else {
-                System.out.println("Nome de usuário ou senha inválidos.");
+                System.out.println("\nNome de usuário ou senha inválidos.");
             }
         } catch (InfraException e) {
             System.out.println(e.getMessage());
@@ -54,6 +54,6 @@ public class LoginManager {
 
     public void logout() {
         loggedIn = false;
-        System.out.println("Logout realizado com sucesso.");
+        System.out.println("\nLogout realizado com sucesso.");
     }
 }
