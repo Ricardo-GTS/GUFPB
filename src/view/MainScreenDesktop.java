@@ -22,6 +22,7 @@ public class MainScreenDesktop {
     private static CursoManagerFacade CursoManager= CursoManagerFacade.getInstance();
     private static LoginManager loginManager;
     private static Scanner scanner = new Scanner(System.in);
+    private static User loggedInUser;
 
     public static void main(String[] args) throws InfraException {
         System.out.println("Bem vindo ao sistema GUFPB !");
@@ -45,7 +46,7 @@ public class MainScreenDesktop {
     
             switch (option) {
                 case 1:
-                    User loggedInUser = loginManager.performLogin();
+                    loggedInUser = loginManager.performLogin();
                     if (loggedInUser != null) {
                         showLoggedInMenu();
                     } else {
@@ -110,7 +111,7 @@ public class MainScreenDesktop {
                 break;
             case 2:
                 QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
-                questionario.executarQuestionario();
+                loggedInUser.SetRespostasQuestionario(questionario.executarQuestionario());
                 showLoggedInMenu();
                 break;
             case 3:
@@ -127,6 +128,7 @@ public class MainScreenDesktop {
                 break;
             case 6:
                 LoginManager.getInstance().logout();
+                loggedInUser = null;
                 showMenu();
                 break;
             default:

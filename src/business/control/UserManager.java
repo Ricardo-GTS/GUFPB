@@ -149,10 +149,14 @@ public class UserManager {
         throw new InfraException("\nUsuário não encontrado.");
     }
 
+   // public void Calculate_Curso_Recomendado(User user)
+
     private static class ComparadorData implements Comparator<User> {
         @Override
         public int compare(User user1, User user2) {
             return user2.getData_nascimento().compareTo(user1.getData_nascimento());
         }
     }
+
+
 }

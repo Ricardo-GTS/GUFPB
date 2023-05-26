@@ -15,6 +15,7 @@ public class User implements Serializable {
     private String login, senha;
     private Data data_nascimento;
     private List<Pergunta> respostasQuestionario;
+    private String Curso_Recomendado;
 
     public Data getData_nascimento() {
         return data_nascimento;
@@ -30,6 +31,10 @@ public class User implements Serializable {
         this.senha = senha;
         this.data_nascimento = data_nascimento;
 
+    }
+
+    public void setCurso_Recomendado(String curso_Recomendado) {
+        Curso_Recomendado = curso_Recomendado;
     }
 
     public String getLogin() {
