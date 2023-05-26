@@ -4,10 +4,8 @@ import infra.InfraException;
 import util.BirthDateInvalidException;
 import util.LoginInvalidException;
 import util.PasswordInvalidException;
-import java.util.Map;
 import java.util.Set;
 
-import business.model.Data;
 import business.model.User;
 
 public class UserManagerFacade {			// Padrão Facade
@@ -26,12 +24,16 @@ public class UserManagerFacade {			// Padrão Facade
 		return instance;
 	}
 
-	public void addUser(String[] args, Data data) throws LoginInvalidException, PasswordInvalidException, BirthDateInvalidException {
-		userManager.addUser(args, data);
+	public void registerUser() throws LoginInvalidException, PasswordInvalidException, BirthDateInvalidException {
+		userManager.registerUser();
 	}
 
-	public void removeUser(String login) throws InfraException {
-		userManager.removeUser(login);
+	public void removeUser() throws InfraException {
+		userManager.removeUser();
+	}
+
+	public void listUsers() throws InfraException {
+		userManager.listUsers();
 	}
 
 	public Set<User> getAllClients() throws InfraException {

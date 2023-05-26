@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class Questionario {
     private List<Pergunta> perguntas;
-    private Scanner scanner;
+    private static Scanner scanner = new Scanner(System.in);
+
 
     public Questionario() {
         perguntas = new ArrayList<>();
-        scanner = new Scanner(System.in);
     }
 
     public void adicionarPergunta(Pergunta pergunta) {

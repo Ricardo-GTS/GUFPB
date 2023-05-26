@@ -19,8 +19,12 @@ public abstract class Curso {
         System.out.println("Nome: " + getNome());
         System.out.println("Duração: " + getDuracaoCurso() + " anos");
         System.out.println("Área: " + getArea());
-        imprimirGradeCurricular();
         System.out.println("---------------------");
+    }
+
+      // Método Template
+    public void exibirGradeCurricular() {
+        imprimirGradeCurricular();
     }
 
     // Métodos abstratos para serem implementados pelas subclasses
