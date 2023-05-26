@@ -5,9 +5,8 @@ import util.BirthDateInvalidException;
 import util.LoginInvalidException;
 import util.PasswordInvalidException;
 
-import java.util.ArrayList;
+
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
