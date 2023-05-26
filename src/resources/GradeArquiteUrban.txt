@@ -1,6 +1,6 @@
 1º Período
 Estrutura Curricular	Natureza	 
-1704160 - ELEMENTOS DE HISTÓRIA, ARTE E ARQUITETURA - 60CH	Obrigatória	
+1704160 - ELEMENTOS DE HISTÓRIA, ARTE E ARQUITETURA - 60CH  Obrigatória	
 1704179 - OFICINA DE DESENHO I - 90CH	Obrigatória	
 1704248 - METODOLOGIA DO TRABALHO CIENTÍFICO - 30CH	Obrigatória	
 1704249 - GEOMETRIA DESCRITIVA - 45CH	Obrigatória	
@@ -8,7 +8,7 @@ Estrutura Curricular	Natureza
 1704251 - OFICINA DE PLASTICA I - 90CH	Obrigatória	
 1704252 - NOÇÕES DE ARQUITETURA E URBANISMO - 45CH	Obrigatória	
 CH Total: 420h.   
- 
+-----------------------------------------------------------------------
 2º Período
 Estrutura Curricular	Natureza	 
 1704128 - OFICINA PLÁSTICA II - ARQUITETURA - 90CH	Obrigatória	
@@ -18,7 +18,7 @@ Estrutura Curricular	Natureza
 1704258 - INTRODUÇÃO AO PROJETO DE ARQUITETURA E URBANISMO - 60CH	Obrigatória	
 1705147 - ERGONOMIA - 30CH	Obrigatória	
 CH Total: 420h.    
-
+-----------------------------------------------------------------------
 3º Período
 Estrutura Curricular	Natureza	 
 1704184 - PROJETO DE EDIFICAÇÕES I - 90CH	Obrigatória	
@@ -28,7 +28,7 @@ Estrutura Curricular	Natureza
 1704268 - CONFORTO AMBIENTAL I - 60CH	Obrigatória	
 1704271 - PERSPECTIVA - 90CH	Obrigatória	
 CH Total: 450h.    
-
+-----------------------------------------------------------------------
 4º Período
 Estrutura Curricular	Natureza	 
 1401349 - SOCIOLOGIA URBANA - 45CH	Obrigatória	
@@ -39,7 +39,7 @@ Estrutura Curricular	Natureza
 1704259 - PROJETO DE EDIFICAÇÕES II - 90CH	Obrigatória	
 1704263 - DESENHO URBANO I - 90CH	Obrigatória	
 CH Total: 420h.    
-
+-----------------------------------------------------------------------
 5º Período
 Estrutura Curricular	Natureza	 
 1703248 - SISTEMAS ESTRUTURAIS II - 90CH	Obrigatória	
@@ -48,7 +48,7 @@ Estrutura Curricular	Natureza
 1704264 - DESENHO URBANO II - 90CH	Obrigatória	
 1704270 - FUNDAMENTOS PARA INTERVENÇÕES EM ÁREAS HISTÓRICAS - 90CH	Obrigatória	
 CH Total: 420h.    
-
+-----------------------------------------------------------------------
 6º Período
 Estrutura Curricular	Natureza	 
 1704290 - PROJETOS ESPECIAIS II - 30CH	Optativa	
@@ -59,7 +59,7 @@ GDARQ0100 - ARQUITETURA DE INTERIORES - 45CH	Optativa
 1704265 - DESENHO URBANO III - 90CH	Obrigatória	
 1704269 - CONFORTO AMBIENTAL III - 45CH	Obrigatória	
 CH Total: 420h.    
-
+-----------------------------------------------------------------------
 7º Período
 Estrutura Curricular	Natureza	 
 1703247 - TECNOLOGIA DAS CONSTRUÇÕES II - 60CH	Obrigatória	
@@ -68,7 +68,7 @@ Estrutura Curricular	Natureza
 1704267 - URBANISMO II - 60CH	Obrigatória	
 GDARQ0101 - ESTÁGIO SUPERVISIONADO I - ARQUITETURA - 90CH	Obrigatória	
 CH Total: 360h. 
-
+-----------------------------------------------------------------------
 8º Período
 Estrutura Curricular	Natureza	 
 1704159 - DESENHO URBANO V - 90CH	Optativa	
@@ -76,14 +76,15 @@ Estrutura Curricular	Natureza
 1704262 - PROJETO DE EDIFICAÇÕES VI - 90CH	Obrigatória	
 1704273 - ESTÁGIO SUPERVISIONADO II - 90CH	Obrigatória	
 CH Total: 330h.  
-
+-----------------------------------------------------------------------
 9º Período
 Estrutura Curricular	Natureza	 
 1704102 - DEONTOLOGIA E PRÁTICA PROFISSIONAL - 30CH	Obrigatória	
 1704274 - TRABALHO DE CONCLUSÃO DE CURSO I - 60CH	Obrigatória	
 CH Total: 90h.    
-
+-----------------------------------------------------------------------
 10º Período
 Estrutura Curricular	Natureza	 
 1704275 - TRABALHO DE CONCLUSÃO DE CURSO II - 300CH	Obrigatória	
 CH Total: 300h.    
+-----------------------------------------------------------------------

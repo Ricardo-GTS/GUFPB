@@ -1,0 +1,125 @@
+CH Total: 1665h.    
+1º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1103114	CÁLCULO DIFERENCIAL E INTEGRAL I - 90h			90h aula
+0h lab.	DISCIPLINA	Obrigatória
+1103118	CÁLCULO VETORIAL E GEOMETRIA ANALÍTICA - 60h			60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1404138	LINGUA INGLESA I - 75h			75h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+GDLPL0029	LÍNGUA PORTUGUESA I - 75h			75h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+CH Total: 300h.    
+-----------------------------------------------------------------------
+2º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1301110	FILOSOFIA DA EDUCACAO II - 45h			45h aula
+0h lab.	DISCIPLINA	Optativa
+1301116	HISTORIA DA EDUCACAO II - 60h	( 1301115 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1301130	SOCIOLOGIA DA EDUCAÇÃO I - 60h	( 1401163 OU 1401134 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1402279	TEORIA DO CONHECIMENTO II - 60h	( 1402278 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1101157	FÍSICA GERAL I - 60h			60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1103115	CÁLCULO DIFERENCIAL E INTEGRAL II - 90h	( 1103118 E 1103114 )		90h aula
+0h lab.	DISCIPLINA	Obrigatória
+1103179	INTRODUÇÃO À ÁLGEBRA LINEAR - 60h	( 1103118 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+CH Total: 435h.    
+-----------------------------------------------------------------------
+3º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1103111	CÁLCULO AVANÇADO - 60h	( 1103115 E 1103104 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1301131	SOCIOLOGIA DA EDUCACAO II - 60h	( 1301130 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1101163	FÍSICA GERAL II - 60h	( 1103114 ) E ( 1101117 OU 1101157 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1103112	CALCULO DIFERENCIAL E INTEGRAL III - 90h	( 1103115 )		90h aula
+0h lab.	DISCIPLINA	Obrigatória
+1107135	INICIACAO A COMPUTACAO - 45h	( 1103114 )		45h aula
+0h lab.	DISCIPLINA	Obrigatória
+1405108	INTRODUÇÃO À PSICOLOGIA - 60h			60h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+GDFIS0078	FÍSICA EXPERIMENTAL I - 60h	( 1101157 OU 1101117 )	( 1101163 OU 1101118 )	60h aula
+0h lab.	DISCIPLINA	Obrigatória
+CH Total: 435h.    
+-----------------------------------------------------------------------
+4º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1101129	INSTRUMENTAÇÃO CIENTÍFICA I - 90h	( 1101118 )		90h aula
+0h lab.	DISCIPLINA	Optativa
+1103128	FUNÇÕES DE UMA VARIÁVEL COMPLEXA - 60h	( 1103112 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1101164	FÍSICA GERAL III - 60h	( 1101118 OU 1101163 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1108100	CÁLCULO DAS PROBABILIDADES E ESTATÍSTICA I - 60h	( 1103114 )		60h aula
+0h lab.	DISCIPLINA	Complementar Obrigatória
+1301127	PSICOLOGIA DA EDUCAÇÃO V - 75h	( 1405108 )		75h aula
+0h lab.	DISCIPLINA	Obrigatória
+GDCOC0072	CALCULO NUMERICO - 60h	( 1107135 E 1103112 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+CH Total: 405h.    
+-----------------------------------------------------------------------
+5º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1101144	MECÂNICA GERAL I - 90h	( 1103115 ) E ( 1101118 OU 1101163 )		90h aula
+0h lab.	DISCIPLINA	Obrigatória
+1105128	QUIMICA GERAL I - 90h			90h aula
+0h lab.	DISCIPLINA	Obrigatória
+GDFIS0095	FÍSICA EXPERIMENTAL II - 60h	( 1101164 OU 1101119 )	( 1101120 OU GDFIS0114 )	60h aula
+0h lab.	DISCIPLINA	Obrigatória
+GDFIS0114	FÍSICA GERAL IV - 60h	( 1101119 OU 1101164 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+CH Total: 300h.  
+-----------------------------------------------------------------------  
+6º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1101103	ELETROMAGNETISMO I - 90h	( 1101120 OU GDFIS0114 )		90h aula
+0h lab.	DISCIPLINA	Optativa
+1101140	LABORATORIO DE FISICA MODERNA I - 90h	( 1101120 OU GDFIS0114 )		90h aula
+0h lab.	DISCIPLINA	Optativa
+1101145	MECÂNICA GERAL II - 90h	( 1101144 )		90h aula
+0h lab.	DISCIPLINA	Optativa
+1101154	TERMODINÂMICA - 60h	( 1103115 ) E ( 1101118 OU 1101163 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1105135	QUIMICA INORGANICA I - 90h	( 1105128 )		90h aula
+0h lab.	DISCIPLINA	Obrigatória
+1302105	DIDÁTICA - 60h	( 1301127 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+CH Total: 480h.    
+-----------------------------------------------------------------------
+7º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1101142	MECÂNICA ANALÍTICA - 60h	( 1101145 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1101107	ESTRUTURA DA MATÉRIA I - 60h	( 1101120 OU GDFIS0114 )		60h aula
+0h lab.	DISCIPLINA	Obrigatória
+1101131	INSTRUMENTAÇÃO PARA O ENSINO DE FÍSICA I - 90h	( 1101118 OU 1101163 )		90h aula
+0h lab.	DISCIPLINA	Obrigatória
+1105142	QUIMICA ORGANICA I - 90h	( 1105128 )		90h aula
+0h lab.	DISCIPLINA	Obrigatória
+CH Total: 300h.    
+8º Semestre
+-----------------------------------------------------------------------
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+1101108	ESTRUTURA DA MATÉRIA II - 60h	( 1101107 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1101146	MECÂNICA QUÂNTICA I - 60h	( 1101107 )		60h aula
+0h lab.	DISCIPLINA	Optativa
+1101132	INSTRUMENTAÇÃO PARA O ENSINO DE FÍSICA II - 90h	( 1101120 OU GDFIS0114 )		90h aula
+0h lab.	DISCIPLINA	Obrigatória
+1303110	ESTRUT FUN ENS I E II GRAU - 75h			75h aula
+0h lab.	DISCIPLINA	Obrigatória
+CH Total: 285h.    
+-----------------------------------------------------------------------
+9º Semestre
+Componente Curricular	Pré-requisito	Co-requisito	CH Detalhada	Tipo	Natureza
+GDMTE0133	PRÁTICA DE ENSINO COMPLEMENTAR DE FÍSICA - 180h	( 1302105 )		180h aula
+0h lab.	ESTÁGIO	Obrigatória
+GDMTE0134	PRÁTICA DE ENSINO DE FÍSICA - 120h	( 1302105 )		120h aula
+0h lab.	ESTÁGIO	Obrigatória
+CH Total: 300h.    
+-----------------------------------------------------------------------
