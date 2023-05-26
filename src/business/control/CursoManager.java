@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 import business.model.Curso;
 import business.model.Cursos.ArquiteUrban;
+import business.model.Cursos.fisica;
 
 public class CursoManager {
     private static Map<String, Curso> cursosListadosMap;
     private static Map<Integer, String> numeroParaNomeCursoMap;
     private static Scanner scanner = new Scanner(System.in);
-
 
     public CursoManager() {
         inicializarCursos();
@@ -24,6 +24,9 @@ public class CursoManager {
         ArquiteUrban arquiteUrban = new ArquiteUrban("Arquitetura e Urbanismo", 5, "Ciências Sociais");
         cursosListadosMap.put("ArquiteUrban", arquiteUrban);
 
+        fisica fisica = new fisica("Física (licenciatura)", 4, "Exatas");
+        cursosListadosMap.put("Física", fisica);
+
         // Adicionar outros cursos aqui
 
     }
@@ -32,6 +35,7 @@ public class CursoManager {
         numeroParaNomeCursoMap = new HashMap<>();
 
         numeroParaNomeCursoMap.put(1, "ArquiteUrban");
+        numeroParaNomeCursoMap.put(2, "Física");
 
         // Adicionar outros cursos aqui
 
@@ -62,6 +66,7 @@ public class CursoManager {
         if (resposta.equals("S")) {
             System.out.print("Digite o número do curso: ");
             int numeroCurso = scanner.nextInt();
+            scanner.nextLine();
 
             String nomeCurso = numeroParaNomeCursoMap.get(numeroCurso);
             if (nomeCurso != null) {

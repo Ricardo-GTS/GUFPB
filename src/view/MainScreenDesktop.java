@@ -10,14 +10,11 @@ import business.control.CursoManagerFacade;
 import business.control.QuestionarioManagerFacade;
 import business.control.UserManagerFacade;
 
-import business.model.Curso;
-import business.model.Questionario.Pergunta;
-
 public class MainScreenDesktop {
 
     private static UserManagerFacade userManager;
-    private static CursoManagerFacade CursoManager= CursoManagerFacade.getInstance();
-    
+    private static CursoManagerFacade CursoManager = CursoManagerFacade.getInstance();
+
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws InfraException {
@@ -26,14 +23,14 @@ public class MainScreenDesktop {
     }
 
     private static void showMenu() {
-        System.out.println("Bem vindo ao sistema GUFPB !");
+        System.out.println("\n - Bem vindo ao sistema GUFPB !");
         System.out.println("Escolha a opcao desejada:");
         System.out.println("1-Cadastrar Usuario");
         System.out.println("2-Listar Usuarios");
         System.out.println("3-Excluir Usuario");
         System.out.println("4-Ver Cursos Disponiveis");
-        System.out.println("6-Responder Questionario");
-        System.out.println("5-Sair");
+        System.out.println("5-Responder Questionario");
+        System.out.println("6-Sair\n");
 
         int option = readIntInput();
 
@@ -72,12 +69,12 @@ public class MainScreenDesktop {
                 showMenu();
                 break;
             case 5:
-                System.exit(0);
-            case 6:
                 QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
                 questionario.executarQuestionario();
                 showMenu();
-                break;    
+                break;
+            case 6:
+                System.exit(0);
             default:
                 System.out.println("Opcao invalida!");
                 showMenu();

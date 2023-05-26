@@ -37,6 +37,7 @@ public class Data implements Comparable<Data> {
 
     @Override
     public int compareTo(Data outraData) {
+
         if (ano > outraData.getAno()) {
             return -1; // Data atual é maior, retorna -1 para decrescente
         } else if (ano < outraData.getAno()) {

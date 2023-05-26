@@ -7,28 +7,28 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class ArquiteUrban extends Curso {
+public class fisica extends Curso {
 
-    public ArquiteUrban(String nome, int anosDuração, String area) {
+    public fisica(String nome, int anosDuração, String area) {
         super(nome, anosDuração, area);
         carregarGradeCurricular();
+
     }
 
     @Override
-    public void setGradeCurricular(String grade) {
+    protected void setGradeCurricular(String grade) {
         gradeCurricular = new StringBuilder();
         gradeCurricular.append(grade);
     }
 
     @Override
-    public void imprimirGradeCurricular() {
-        System.out.println("Grade Curricular do curso Arquitetura e Urbanismo:");
+    protected void imprimirGradeCurricular() {
+        System.out.println("Grade Curricular do curso de Física:");
         System.out.println(gradeCurricular);
     }
 
     private void carregarGradeCurricular() {
-        try (InputStream inputStream = getClass().getClassLoader()
-                .getResourceAsStream("resources/GradeArquiteUrban.txt");
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("resources/GradeFisica.txt");
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             StringBuilder grade = new StringBuilder();
@@ -40,4 +40,5 @@ public class ArquiteUrban extends Curso {
             System.out.println("Erro ao carregar a grade curricular: " + e.getMessage());
         }
     }
+
 }
