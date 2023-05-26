@@ -105,53 +105,9 @@ public class MainScreenDesktop {
     
         switch (option) {
             case 1:
-    private static void showMenu() {
-        System.out.println("\n - Bem vindo ao sistema GUFPB !");
-        System.out.println("Escolha a opcao desejada:");
-        System.out.println("1-Cadastrar Usuario");
-        System.out.println("2-Listar Usuarios");
-        System.out.println("3-Excluir Usuario");
-        System.out.println("4-Ver Cursos Disponiveis");
-        System.out.println("5-Responder Questionario");
-        System.out.println("6-Sair\n");
-
-        int option = readIntInput();
-
-        switch (option) {
-            case 1:
-                try {
-                    userManager.registerUser();
-                } catch (LoginInvalidException e) {
-                    System.out.println(e.getMessage());
-                } catch (PasswordInvalidException e) {
-                    System.out.println(e.getMessage());
-                } catch (BirthDateInvalidException e) {
-                    System.out.println(e.getMessage());
-                }
-                showMenu();
-                break;
-            case 2:
-                try {
-                    userManager.listUsers();
-                } catch (InfraException e) {
-                    System.out.println(e.getMessage());
-                }
-                showMenu();
-                break;
-            case 3:
-                try {
-                    userManager.removeUser();
-                } catch (InfraException e) {
-                    System.out.println(e.getMessage());
-                }
-                showMenu();
-                break;
-            case 4:
-                CursoManager = CursoManagerFacade.getInstance();
                 CursoManager.listarCursos();
                 showLoggedInMenu();
                 break;
-            case 5:
             case 2:
                 QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
                 questionario.executarQuestionario();
@@ -172,9 +128,6 @@ public class MainScreenDesktop {
             case 6:
                 LoginManager.getInstance().logout();
                 showMenu();
-                break;
-            case 6:
-                System.exit(0);
                 break;
             default:
                 System.out.println("Opção inválida!");
