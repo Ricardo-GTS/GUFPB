@@ -1,12 +1,14 @@
 package business.control;
 
 import infra.InfraException;
+import util.BirthDateInvalidException;
 import util.LoginInvalidException;
 import util.PasswordInvalidException;
 import java.util.Map;
+import java.util.Set;
 
+import business.model.Data;
 import business.model.User;
-import business.model.Cursos.Data;
 
 public class UserManagerFacade {			// Padrão Facade
 
@@ -24,7 +26,7 @@ public class UserManagerFacade {			// Padrão Facade
 		return instance;
 	}
 
-	public void addUser(String[] args, Data data) throws LoginInvalidException, PasswordInvalidException {
+	public void addUser(String[] args, Data data) throws LoginInvalidException, PasswordInvalidException, BirthDateInvalidException {
 		userManager.addUser(args, data);
 	}
 
@@ -32,7 +34,7 @@ public class UserManagerFacade {			// Padrão Facade
 		userManager.removeUser(login);
 	}
 
-	public Map<String, User> getAllClients() throws InfraException {
+	public Set<User> getAllClients() throws InfraException {
 		return userManager.getAllClients();
 	}
 

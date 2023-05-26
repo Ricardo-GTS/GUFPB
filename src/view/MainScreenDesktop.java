@@ -1,6 +1,7 @@
 package view;
 
 import infra.InfraException;
+import util.BirthDateInvalidException;
 import util.LoginInvalidException;
 import util.PasswordInvalidException;
 
@@ -11,18 +12,19 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
 
+import business.control.QuestionarioManagerFacade;
 import business.control.UserManagerFacade;
 import business.model.Curso;
+import business.model.Data;
 import business.model.User;
 import business.model.Cursos.ArquiteUrban;
-import business.model.Cursos.Data;
+import business.model.Questionario.Pergunta;
 
 public class MainScreenDesktop {
 
     private static UserManagerFacade userManager;
     private static Scanner scanner = new Scanner(System.in);
     private static ArquiteUrban arquiteUrban;
-    private static List<Curso> CursosListados = new ArrayList<>();
     private static Map<String, Curso> CursosListadosMap = new HashMap<>();
 
     public static void main(String[] args) throws InfraException {
@@ -38,6 +40,7 @@ public class MainScreenDesktop {
         System.out.println("2-Listar Usuarios");
         System.out.println("3-Excluir Usuario");
         System.out.println("4-Ver Cursos Disponiveis");
+        System.out.println("6-Responder Questionario");
         System.out.println("5-Sair");
 
         int option = readIntInput();
@@ -57,6 +60,10 @@ public class MainScreenDesktop {
                 break;
             case 5:
                 System.exit(0);
+            case 6:
+                QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
+                questionario.executarQuestionario();
+                break;    
             default:
                 System.out.println("Opcao invalida!");
                 showMenu();
@@ -112,7 +119,24 @@ public class MainScreenDesktop {
             } catch (PasswordInvalidException e) {
                 System.out.println(e.getMessage());
                 pass = readStringInput("Senha do usuario:");
-            }
+            } catch (BirthDateInvalidException e) {
+                System.out.println(e.getMessage());
+                System.out.println("Data de nascimento");
+                System.out.print("Dia: ");
+                dia = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.print("Mes: ");
+                mes = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.print("Ano: ");
+                ano = scanner.nextInt();
+                scanner.nextLine();
+
+                data2 = new Data(dia, mes, ano);
+                System.out.println(data2);
+            } 
         }
 
         showMenu();
@@ -121,39 +145,47 @@ public class MainScreenDesktop {
     }
 
     private static void listUsers() {
-
         String usuarios = "";
-        Iterator<User> users;
+        Iterator<User> iterator;
         try {
-            users = userManager.getAllClients().values().iterator();
-            while (users.hasNext()) {
-                User user = users.next();
-                usuarios = usuarios + "[ Login: " + user.getLogin() + " || Senha: " + user.getSenha()
-                        + " ||" + " Data de Nascimento: " + user.getData_nascimento() + " ]" + "\n";
-            }
-            System.out.println(usuarios);
-        } catch (InfraException e) {
+            iterator = userManager.getAllClients().iterator();
+
+        while (iterator.hasNext()) {
+            User user = iterator.next();
+            usuarios = usuarios + "[ Login: " + user.getLogin() + " || Senha: " + user.getSenha()
+                    + " ||" + " Data de Nascimento: " + user.getData_nascimento() + " ]" + "\n";
+        }
+        System.out.println(usuarios);
+            } catch (InfraException e) {
             System.out.println(e.getMessage());
         }
-
         showMenu();
     }
-
+    
     private static void removeUser() {
-        String login = readStringInput("Digite o login do usuario que deseja excluir:");
+        String login = readStringInput("Digite o login do usuário que deseja excluir:");
         try {
-            if (userManager.getAllClients().containsKey(login)) {
-                userManager.removeUser(login);
-                System.out.println("Usuario removido com sucesso!");
-            } else {
-                System.out.println("Usuario nao encontrado!");
+            boolean userRemoved = false;
+            Iterator<User> iterator = userManager.getAllClients().iterator();
+            while (iterator.hasNext()) {
+                User user = iterator.next();
+                if (user.getLogin().equals(login)) {
+                    iterator.remove();
+                    userRemoved = true;
+                    System.out.println("Usuário removido com sucesso!");
+                    break;
+                }
+            }
+            if (!userRemoved) {
+                System.out.println("Usuário não encontrado!");
             }
         } catch (InfraException e) {
             System.out.println(e.getMessage());
         }
-
+    
         showMenu();
     }
+    
 
     private static void InicializarCursos() {
         arquiteUrban = new ArquiteUrban("Aquitetura e Urbanismo", 4, "Ciências Sociais");
@@ -173,7 +205,7 @@ public class MainScreenDesktop {
             System.out.println("Curso: " + nome);
             curso.imprimirInformacoesCurso();
         }
-        
+
         showMenu();
     }
 

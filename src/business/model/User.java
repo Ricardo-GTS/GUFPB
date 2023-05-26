@@ -1,9 +1,10 @@
 
 package business.model;
+import java.util.List;
+import business.model.Questionario.Pergunta;
+
 
 import java.io.Serializable;
-
-import business.model.Cursos.Data;
 
 public class User implements Serializable {
     /**
@@ -13,6 +14,7 @@ public class User implements Serializable {
 
     private String login, senha;
     private Data data_nascimento;
+    private List<Pergunta> respostasQuestionario;
 
     public Data getData_nascimento() {
         return data_nascimento;
@@ -44,6 +46,14 @@ public class User implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public List<Pergunta> getRespostasQuestionario() {
+        return respostasQuestionario;
+    }
+
+    public void SetRespostasQuestionario(List<Pergunta> respostasQuestionario) {
+        this.respostasQuestionario = respostasQuestionario;
     }
 
     public String toString() {
