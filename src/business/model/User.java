@@ -37,6 +37,10 @@ public class User implements Serializable {
         Curso_Recomendado = curso_Recomendado;
     }
 
+    public String getCurso_Recomendado() {
+        return Curso_Recomendado;
+    }
+
     public String getLogin() {
         return login;
     }

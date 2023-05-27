@@ -22,24 +22,24 @@ public class CursoManager {
     public static void inicializarCursos() {
         cursosListadosMap = new HashMap<>();
 
-        ArquiteUrban arquiteUrban = new ArquiteUrban("Arquitetura e Urbanismo", 5, "Ciências Sociais");
+        ArquiteUrban arquiteUrban = new ArquiteUrban("Arquitetura e Urbanismo", 5, "Ciências Sociais");     //Aqui tambem o primeiro campo do Map tem que ser o nome da classe do Curso.
         cursosListadosMap.put("ArquiteUrban", arquiteUrban);
 
         fisica fisica = new fisica("Física (licenciatura)", 4, "Exatas");
-        cursosListadosMap.put("Física", fisica);
+        cursosListadosMap.put("fisica", fisica);
 
         Computacao computacao = new Computacao("Ciência da Computação", 4, "Tecnologia da Informação");
-        cursosListadosMap.put("Ciência da Computação", computacao);
+        cursosListadosMap.put("Computacao", computacao);
         // Adicionar outros cursos aqui
 
     }
 
     public static void inicializarNumeroParaNomeCursoMap() {
         numeroParaNomeCursoMap = new HashMap<>();
-
-        numeroParaNomeCursoMap.put(1, "ArquiteUrban");
-        numeroParaNomeCursoMap.put(2, "Física");
-        numeroParaNomeCursoMap.put(3, "Ciência da Computação");
+        
+        numeroParaNomeCursoMap.put(1, "ArquiteUrban");      // esse valor tem que ser o nome da classe do Curso, para que sejá possivel bustar o curso pelo nome.
+        numeroParaNomeCursoMap.put(2, "fisica");
+        numeroParaNomeCursoMap.put(3, "Computacao");
 
         // Adicionar outros cursos aqui
 

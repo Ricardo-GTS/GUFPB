@@ -8,6 +8,7 @@ public class QuestionarioManagerFacade {
 
     private QuestionarioManagerFacade() {
         questionarioManager = new QuestionarioManager();
+        questionarioManager.criarQuestionario();
     }
 
     public static QuestionarioManagerFacade getInstance() {
@@ -18,7 +19,11 @@ public class QuestionarioManagerFacade {
     }
 
     public List<Pergunta>  executarQuestionario() {
-        questionarioManager.criarQuestionario();
         return questionarioManager.executarQuestionario();
     }
+
+    public String calcularCursoRecomendado(List<Pergunta> respostasQuestionario) {
+        return questionarioManager.calcularCursoRecomendado(respostasQuestionario);
+    }
 }
+

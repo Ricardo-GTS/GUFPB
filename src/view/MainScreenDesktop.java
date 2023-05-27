@@ -12,7 +12,6 @@ import business.control.QuestionarioManagerFacade;
 import business.control.UserManagerFacade;
 import business.model.Curso;
 import business.model.User;
-import business.model.Questionario.Pergunta;
 
 public class MainScreenDesktop {
 
@@ -21,6 +20,7 @@ public class MainScreenDesktop {
     private static LoginManager loginManager;
     private static Scanner scanner = new Scanner(System.in);
     private static User loggedInUser;
+    private static Curso CursoRecomendado;
 
     public static void main(String[] args) throws InfraException {
         System.out.println("Bem vindo ao sistema GUFPB !");
@@ -38,7 +38,8 @@ public class MainScreenDesktop {
             System.out.println("3-Listar Usuários");
             System.out.println("4-Excluir Usuário");
             System.out.println("5-Ver Cursos Disponíveis");
-            System.out.println("6-Sair\n");
+            System.out.println("6-Sair");
+            System.out.println("Obs. Faça o Login para Responder o Questionário e Ver o Curso Recomendado\n");
 
             int option = readIntInput();
 
@@ -100,7 +101,9 @@ public class MainScreenDesktop {
         System.out.println("5-Excluir Usuário");
         System.out.println("6-Logout\n");
 
+
         int option = readIntInput();
+        String resposta;
 
         switch (option) {
             case 1:
@@ -110,10 +113,33 @@ public class MainScreenDesktop {
             case 2:
                 QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
                 loggedInUser.SetRespostasQuestionario(questionario.executarQuestionario());
+                loggedInUser.setCurso_Recomendado(questionario.calcularCursoRecomendado(loggedInUser.getRespostasQuestionario()));
+                
+                CursoRecomendado = CursoManager.buscarCurso(loggedInUser.getCurso_Recomendado());
+                if (CursoRecomendado != null) {
+                    System.out.println("Esse é o Curso Recomendado para você:");
+                    CursoRecomendado.imprimirInformacoesCurso();
+                    System.out.println("Deseja ver a Grade Curricular? (S/N)");
+                    resposta = scanner.nextLine();
+                    if (resposta.equalsIgnoreCase("S"))
+                    CursoRecomendado.exibirGradeCurricular();
+                } else {
+                    System.out.println("Nenhum curso recomendado encontrado.");
+                }
                 showLoggedInMenu();
                 break;
             case 3:
-                // Implementar a funcionalidade de ver curso recomendado
+                if(CursoRecomendado != null){
+                    System.out.println("Esse é o Curso Recomendado para você : ");
+                    CursoRecomendado.imprimirInformacoesCurso();
+                    System.out.println("Quer Ver a Grade Curricular ? (S/N)");
+                    resposta = scanner.nextLine();
+                    if (resposta.equals("S") || resposta.equals("s"))
+                    CursoRecomendado.exibirGradeCurricular();
+                    CursoManager.buscarCurso(loggedInUser.getCurso_Recomendado());
+                }else{
+                    System.out.println("Você ainda não respondeu o questionário");
+                }
                 showLoggedInMenu();
                 break;
             case 4:
