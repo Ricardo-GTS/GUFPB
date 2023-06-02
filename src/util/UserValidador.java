@@ -31,7 +31,7 @@ public class UserValidador {
         int mes = data.getMes();
         int ano = data.getAno();
 
-        if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 1900 || ano > 2023) {
+        if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano <= 1900 || ano >= 2023) {
             throw new BirthDateInvalidException("Data de nascimento inválida!\n");
         }
     }
