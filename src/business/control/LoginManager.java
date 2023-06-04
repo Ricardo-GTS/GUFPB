@@ -1,4 +1,7 @@
 package business.control;
+
+import business.control.MementoLogin.LoginMemento;
+import business.control.MementoLogin.LoginMementoCareTaker;
 import business.model.User;
 import infra.InfraException;
 
@@ -6,14 +9,17 @@ import java.util.Scanner;
 
 public class LoginManager {
     private static LoginManager instance;
+    private User loggedInUser;
     private UserManagerFacade userManager;
     private boolean loggedIn;
+    private LoginMementoCareTaker mementoCareTaker; // Memento caretaker
     
     private static Scanner scanner = new Scanner(System.in);
 
-    private LoginManager() throws InfraException {
+    private LoginManager() throws InfraException {      
         userManager = UserManagerFacade.getInstance();
         loggedIn = false;
+        mementoCareTaker = new LoginMementoCareTaker(); // Inicializar o memento caretaker
     }
 
     public static LoginManager getInstance() throws InfraException {
@@ -30,11 +36,11 @@ public class LoginManager {
         String password = scanner.nextLine();
 
         try {
-            User user = userManager.getUser(username);
-            if (user != null && validateCredentials(username, password, user)) {
-                System.out.println("\nLogin bem-sucedido. Bem-vindo, " + user.getLogin() + "!");
+            loggedInUser = userManager.getUser(username);
+            if (loggedInUser != null && validateCredentials(username, password, loggedInUser)) {
+                System.out.println("\nLogin bem-sucedido. Bem-vindo, " + loggedInUser.getLogin() + "!");
                 loggedIn = true;
-                return user;
+                return loggedInUser;
             } else {
                 System.out.println("\nNome de usuário ou senha inválidos.");
             }
@@ -53,7 +59,31 @@ public class LoginManager {
     }
 
     public void logout() {
+        saveState();        // Salvar o estado do memento
         loggedIn = false;
+        loggedInUser = null;
         System.out.println("\nLogout realizado com sucesso.");
     }
+    
+    public void saveState() {                               // Salvar o estado do memento
+        LoginMemento memento = new LoginMemento(loggedInUser, loggedIn);
+        mementoCareTaker.saveMemento(memento);
+    }
+    
+    public boolean restoreState() {                          // Restaurar o estado do memento
+        LoginMemento memento = mementoCareTaker.retrieveMemento();
+        if (memento != null) {
+            loggedInUser = memento.getLoggedInUser();
+            loggedIn = memento.isLoggedIn();
+            return true;
+        } else {
+            System.out.println("Não há estados salvos.");
+            return false;
+        }
+    }
+
+    public User getLoggedInUser() {
+        return loggedInUser;
+    }
+    
 }

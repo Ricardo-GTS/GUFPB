@@ -39,7 +39,8 @@ public class MainScreenDesktop {
             System.out.println("3-Listar Usuários");
             System.out.println("4-Excluir Usuário");
             System.out.println("5-Ver Cursos Disponíveis");
-            System.out.println("6-Sair");
+            System.out.println("6-Restaurar Login Anterior");
+            System.out.println("7-Sair");
             System.out.println("Obs. Faça o Login para Responder o Questionário e Ver o Curso Recomendado\n");
 
             int option = readIntInput();
@@ -82,6 +83,15 @@ public class MainScreenDesktop {
                     showMenu();
                     break;
                 case 6:
+                    if(loginManager.restoreState()){
+                        loggedInUser = loginManager.getLoggedInUser();
+                        System.out.println("Login restaurado com sucesso! Bem vindo de volta " + loggedInUser.getLogin() + "!");
+                        showLoggedInMenu();
+                    } else {
+                        showMenu();
+                    }
+                    break;                    
+                case 7:
                     System.exit(0);
                 default:
                     System.out.println("Opção inválida!");
