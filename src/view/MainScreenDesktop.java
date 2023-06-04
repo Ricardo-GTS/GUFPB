@@ -10,6 +10,8 @@ import business.control.CursoManagerFacade;
 import business.control.LoginManager;
 import business.control.QuestionarioManagerFacade;
 import business.control.UserManagerFacade;
+import business.control.Observer.UserObserver;
+import business.control.Observer.UserObserverImpl;
 import business.model.Curso;
 import business.model.User;
 
@@ -22,10 +24,12 @@ public class MainScreenDesktop {
     private static QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
     private static User loggedInUser;
     private static Curso CursoRecomendado;
+    private static UserObserver observer = new UserObserverImpl();
 
     public static void main(String[] args) throws InfraException {
         System.out.println("Bem vindo ao sistema GUFPB !");
         userManager = UserManagerFacade.getInstance();
+        userManager.addObserver(observer);
         loginManager = LoginManager.getInstance();
         showMenu();
     }

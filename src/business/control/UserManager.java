@@ -24,7 +24,7 @@ public class UserManager {
         users = new TreeSet<>(new ComparadorData());
     }
 
-    public void registerUser() throws LoginInvalidException, PasswordInvalidException, BirthDateInvalidException {
+    public String registerUser() throws LoginInvalidException, PasswordInvalidException, BirthDateInvalidException {
         System.out.print("Nome do usuario: ");
         String name = scanner.nextLine();
 
@@ -50,9 +50,8 @@ public class UserManager {
         while (true) {
             try {
                 String[] args = { name, pass, data2.toString() };
-                addUser(args, data2);
-                System.out.println("\nUsuario adicionado com sucesso!");
-                break;
+                User temp = addUser(args, data2);
+                return temp.getLogin(); 
             } catch (LoginInvalidException e) {
                 System.out.println(e.getMessage());
                 System.out.print("Nome do usuario: ");
@@ -95,18 +94,19 @@ public class UserManager {
         }
     }
 
-    public void removeUser() throws InfraException {
+    public String removeUser() throws InfraException {
         System.out.print("Digite o login do usuário que deseja excluir: ");
         String login = scanner.nextLine();
+        String Removed = null;
         try {
-            DeleteUser(login);
-            System.out.println("\nUsuário removido com sucesso!");
+            Removed = DeleteUser(login);
         } catch (InfraException e) {
             System.out.println(e.getMessage());
         }
+        return Removed;
     }
 
-    public void DeleteUser(String login) throws InfraException {
+    public String DeleteUser(String login) throws InfraException {
         User userToRemove = null;
         for (User user : users) {
             if (user.getLogin().equals(login)) {
@@ -118,14 +118,17 @@ public class UserManager {
             throw new InfraException("\nUsuário não encontrado.");
         }
         users.remove(userToRemove);
+        return userToRemove.getLogin();
     }
 
-    private void addUser(String[] args, Data data2)
+    private User addUser(String[] args, Data data2)
             throws LoginInvalidException, PasswordInvalidException, BirthDateInvalidException {
         UserValidador.validateName(args[0]);
         UserValidador.validatePassword(args[1]);
         UserValidador.validateBirthDate(data2);
-        users.add(createUser(args[0], args[1], data2));
+        User temp = createUser(args[0], args[1], data2);
+        users.add(temp);
+        return temp;
     }
 
     private User createUser(String username, String password, Data data) {
