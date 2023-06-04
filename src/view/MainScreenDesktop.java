@@ -19,6 +19,7 @@ public class MainScreenDesktop {
     private static CursoManagerFacade CursoManager = CursoManagerFacade.getInstance();
     private static LoginManager loginManager;
     private static Scanner scanner = new Scanner(System.in);
+    private static QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
     private static User loggedInUser;
     private static Curso CursoRecomendado;
 
@@ -111,13 +112,14 @@ public class MainScreenDesktop {
                 showLoggedInMenu();
                 break;
             case 2:
-                QuestionarioManagerFacade questionario = QuestionarioManagerFacade.getInstance();
-                loggedInUser.SetRespostasQuestionario(questionario.executarQuestionario());
-                loggedInUser.setCurso_Recomendado(questionario.calcularCursoRecomendado(loggedInUser.getRespostasQuestionario()));
+                questionario.executarQuestionario();
+                System.out.println("Calculando Curso Recomendado...");
+                questionario.calcularCursoRecomendado();
+                loggedInUser.setCurso_Recomendado(questionario.getCursoRecomendado());
                 
                 CursoRecomendado = CursoManager.buscarCurso(loggedInUser.getCurso_Recomendado());
                 if (CursoRecomendado != null) {
-                    System.out.println("Esse é o Curso Recomendado para você:");
+                    System.out.println("Esse é o Curso Recomendado para você:\n");
                     CursoRecomendado.imprimirInformacoesCurso();
                     System.out.println("Deseja ver a Grade Curricular? (S/N)");
                     resposta = scanner.nextLine();
@@ -153,6 +155,7 @@ public class MainScreenDesktop {
             case 6:
                 LoginManager.getInstance().logout();
                 loggedInUser = null;
+                questionario.CleanRespostaQuestionario();
                 showMenu();
                 break;
             default:

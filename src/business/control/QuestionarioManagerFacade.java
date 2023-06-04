@@ -1,10 +1,11 @@
 package business.control;
-import java.util.List;
-import business.model.Questionario.Pergunta;
+
+import infra.InfraException;
 
 public class QuestionarioManagerFacade {
     private static QuestionarioManagerFacade instance;
     private QuestionarioManager questionarioManager;
+
 
     private QuestionarioManagerFacade() {
         questionarioManager = new QuestionarioManager();
@@ -18,12 +19,20 @@ public class QuestionarioManagerFacade {
         return instance;
     }
 
-    public List<Pergunta>  executarQuestionario() {
-        return questionarioManager.executarQuestionario();
+    public void executarQuestionario() {
+        questionarioManager.executarQuestionario();
     }
 
-    public String calcularCursoRecomendado(List<Pergunta> respostasQuestionario) {
-        return questionarioManager.calcularCursoRecomendado(respostasQuestionario);
+    public void calcularCursoRecomendado() {
+        questionarioManager.calcularCursoRecomendado();
+    }
+
+    public String getCursoRecomendado() throws InfraException {
+        return questionarioManager.getCursoRecomendado();
+    }
+
+    public void CleanRespostaQuestionario() {
+        questionarioManager.CleanRespostaQuestionario();
     }
 }
 

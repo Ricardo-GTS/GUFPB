@@ -1,18 +1,29 @@
-
 package business.control;
 
-import java.util.List;
+import business.control.Commands.Command;
+import business.control.Commands.CalcularCursoRecomendadoCommand;
+import business.control.Commands.ExecutarQuestionarioCommand;
+import business.control.Commands.CleanRespostaQuestionario;
 
 import business.model.Questionario.Pergunta;
 import business.model.Questionario.Questionario;
 import business.model.Questionario.Resposta;
+import infra.InfraException;
+
+
+
 
 public class QuestionarioManager {
     private Questionario questionario;
-
+    private Command executarQuestionarioCommand;
+    private Command calcularCursoRecomendadoCommand;
+    private Command CleanRespostaQuestionario;
 
     public QuestionarioManager() {
         questionario = new Questionario();
+        executarQuestionarioCommand = new ExecutarQuestionarioCommand(questionario);
+        CleanRespostaQuestionario = null; // Será definido posteriormente
+        calcularCursoRecomendadoCommand = null; // Será definido posteriormente
     }
 
     public void criarQuestionario() {
@@ -31,17 +42,22 @@ public class QuestionarioManager {
         questionario.adicionarPergunta(pergunta6);
     }
 
-    public List<Pergunta>  executarQuestionario() {
-        return  questionario.responderQuestionario();
+    public void executarQuestionario() {
+        executarQuestionarioCommand.execute();
+    }
+
+    public void calcularCursoRecomendado() {
+        calcularCursoRecomendadoCommand = new CalcularCursoRecomendadoCommand(questionario);
+        calcularCursoRecomendadoCommand.execute();
+    }
+
+    public String getCursoRecomendado() throws InfraException {
+        return questionario.getCursoRecomendado();
     }
 
     public void CleanRespostaQuestionario() {
-        questionario.CleanRespostaQuestionario();
+        CleanRespostaQuestionario = new CleanRespostaQuestionario(questionario);
+        CleanRespostaQuestionario.execute();
     }
 
-    public String calcularCursoRecomendado(List<Pergunta> respostas) {
-        return questionario.calcularCursoRecomendado(respostas);
-    }
-
-    
 }

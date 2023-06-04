@@ -6,14 +6,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import infra.InfraException;
+
 
 public class Questionario {
     private List<Pergunta> perguntas;
     private static Scanner scanner = new Scanner(System.in);
+    private String cursoRecomendado;
 
 
     public Questionario() {
         perguntas = new ArrayList<>();
+        cursoRecomendado = null;
     }
 
     public void adicionarPergunta(Pergunta pergunta) {
@@ -27,7 +31,7 @@ public class Questionario {
         }
     }
 
-    public List<Pergunta> responderQuestionario() {
+    public void responderQuestionario() {
         for (Pergunta pergunta : perguntas) {
             System.out.println(pergunta.getTexto());
             boolean resposta = lerResposta();
@@ -35,25 +39,25 @@ public class Questionario {
             System.out.println();
         }
             System.out.println("Questionário concluído!");
-        return perguntas;
     }
 
     public void CleanRespostaQuestionario() {
         for (Pergunta pergunta : perguntas) {
             pergunta.getResposta().setValor(false);
         }
+        cursoRecomendado = null;
     }   
 
     private boolean lerResposta() {
-        System.out.print("Digite 'Sim' ou 'Não': ");
+        System.out.print("Digite 'S' ou 'N': ");
         String resposta = scanner.nextLine().toLowerCase();
-        return resposta.equals("sim");
+        return resposta.equals("s");
     }
 
-    public String calcularCursoRecomendado(List<Pergunta> respostas) {
+    public void calcularCursoRecomendado() {
         Map<String, Integer> contagemCursos = new HashMap<>();
     
-        for (Pergunta pergunta : respostas) {
+        for (Pergunta pergunta : perguntas) {
             if (pergunta.getResposta().getValor()) {
                 String curso = pergunta.getCursoRelacionado();
                 contagemCursos.put(curso, contagemCursos.getOrDefault(curso, 0) + 1);
@@ -61,24 +65,27 @@ public class Questionario {
         }
     
         // Encontrar o curso com o maior número de ocorrências
-        String cursoRecomendado = null;
+        String cursoRec = null;
         int maxOcorrencias = 0;
         for (Map.Entry<String, Integer> entry : contagemCursos.entrySet()) {
             String curso = entry.getKey();
             int ocorrencias = entry.getValue();
             if (ocorrencias > maxOcorrencias) {
-                cursoRecomendado = curso;
+                cursoRec = curso;
                 maxOcorrencias = ocorrencias;
             }
         }
     
-        return cursoRecomendado;
+        cursoRecomendado = cursoRec;
+    }
+
+    public String getCursoRecomendado() throws InfraException {
+        if (cursoRecomendado == null) {
+            throw new InfraException("O curso recomendado ainda não foi calculado!");
+        }
+        else
+            return cursoRecomendado;
     }
 
 
 }
-
-//porque as peguntas do questionario está se repetindo quando é executado ?
-//porque o metodo exibirQuestionario() está sendo chamado duas vezes, uma no metodo responderQuestionario() e outra no metodo listarCursos()
-//não está
-
