@@ -13,6 +13,7 @@ import java.util.TreeSet;
 
 import business.model.Data;
 import business.model.User;
+import business.model.User.BuilderUser;
 
 public class UserManager {
 
@@ -131,8 +132,9 @@ public class UserManager {
         return temp;
     }
 
-    private User createUser(String username, String password, Data data) {
-        return new User(username, password, data);
+    private User createUser(String username, String password, Data data) {      // Padrão Factory
+        // Lógica de criação de um objeto User
+        return new User.BuilderUser(username, password, data).build();          // Padrão Builder
     }
 
     public Set<User> getAllClients() throws InfraException {

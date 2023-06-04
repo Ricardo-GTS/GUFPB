@@ -1,72 +1,76 @@
 
 package business.model;
-import java.util.List;
-import business.model.Questionario.Pergunta;
 
 
-import java.io.Serializable;
+public class User {
 
-public class User implements Serializable {
-    /**
-     * 
-     */
-    private static final long serialVersionUID = -3409171233621036055L;
-
-    private String login, senha;
+    private String login;
+    private String senha;
     private Data data_nascimento;
-    private List<Pergunta> respostasQuestionario;
     private String Curso_Recomendado;
 
-    public Data getData_nascimento() {
-        return data_nascimento;
-    }
-
-    public void setData_nascimento(Data data_nascimento) {
-        this.data_nascimento = data_nascimento;
-    }
-
-    public User(String login, String senha, Data data_nascimento) {
-        super();
-        this.login = login;
-        this.senha = senha;
-        this.data_nascimento = data_nascimento;
-
-    }
-
-    public void setCurso_Recomendado(String curso_Recomendado) {
-        Curso_Recomendado = curso_Recomendado;
-    }
-
-    public String getCurso_Recomendado() {
-        return Curso_Recomendado;
+    private User(BuilderUser builder) {
+        this.login = builder.login;
+        this.senha = builder.senha;
+        this.data_nascimento = builder.data_nascimento;
+        this.Curso_Recomendado = builder.Curso_Recomendado;
     }
 
     public String getLogin() {
         return login;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
     public String getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public Data getData_nascimento() {
+        return data_nascimento;
     }
 
-    public List<Pergunta> getRespostasQuestionario() {
-        return respostasQuestionario;
+    public String getCurso_Recomendado() {
+        return Curso_Recomendado;
     }
 
-    public void SetRespostasQuestionario(List<Pergunta> respostasQuestionario) {
-        this.respostasQuestionario = respostasQuestionario;
+    public void setCurso_Recomendado(String curso_Recomendado) {
+        Curso_Recomendado = curso_Recomendado;
     }
 
+    @Override
     public String toString() {
-        return login + "\n" + senha;
+        return "User{" +
+                "login='" + login + '\'' +
+                ", senha='" + senha + '\'' +
+                ", data_nascimento=" + data_nascimento +
+                ", Curso_Recomendado='" + Curso_Recomendado + '\'' +
+                '}';
+    }
+
+    public static class BuilderUser {                       // Metodo Builder
+        private String login;
+        private String senha;
+        private Data data_nascimento;
+        private String Curso_Recomendado;
+
+        public BuilderUser(String login, String senha, Data data_nascimento){
+            this.login = login;
+            this.senha = senha;
+            this.data_nascimento = data_nascimento;
+        }
+
+        public BuilderUser dataNascimento(Data data_nascimento) {
+            this.data_nascimento = data_nascimento;
+            return this;
+        }
+
+        public BuilderUser cursoRecomendado(String Curso_Recomendado) {
+            this.Curso_Recomendado = Curso_Recomendado;
+            return this;
+        }
+
+        public User build() {
+            return new User(this);
+        }
     }
 
 }

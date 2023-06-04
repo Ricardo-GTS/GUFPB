@@ -89,13 +89,14 @@ public class MainScreenDesktop {
                 case 6:
                     if(loginManager.restoreState()){
                         loggedInUser = loginManager.getLoggedInUser();
-                        System.out.println("Login restaurado com sucesso! Bem vindo de volta " + loggedInUser.getLogin() + "!");
+                        System.out.println("\nLogin restaurado com sucesso! Bem vindo de volta " + loggedInUser.getLogin() + "!");
                         showLoggedInMenu();
                     } else {
                         showMenu();
                     }
                     break;                    
                 case 7:
+                    System.out.println("\nSaindo...");
                     System.exit(0);
                 default:
                     System.out.println("Opção inválida!");
