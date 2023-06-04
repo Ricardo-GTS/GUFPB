@@ -13,7 +13,6 @@ import java.util.TreeSet;
 
 import business.model.Data;
 import business.model.User;
-import business.model.User.BuilderUser;
 
 public class UserManager {
 
